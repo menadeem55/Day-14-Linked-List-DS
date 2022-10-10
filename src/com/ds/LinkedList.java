@@ -9,7 +9,6 @@ public class LinkedList {
 	
 	{
 		Object data;
-		Node next;
 		Node ref;
 
 		Node(Object data) {
@@ -104,7 +103,7 @@ public class LinkedList {
 					String result = temp.data+" element found at index " +index;
 					return result;
 				}
-				temp = temp.next;
+				temp = temp.ref;
 			}
 			return null;
 		}
@@ -116,25 +115,26 @@ public class LinkedList {
 					Node temp = head;
 					int index = 0;
 					
-					{
 						while(temp.data != input)
 						{
 							index++;
-							temp = temp.next;
+							temp = temp.ref;
 						}
 						Node left = head;
-						Node right = left.next;
+						Node right = left.ref;
 						int index1 = 0;
 						
 						while(index < index)
 						{
 							index++;
-							left = left.next;
-							right = right.next;
-						}
-						newNode.next = right;
-						left.next = newNode;
+							left = left.ref;
+							right = right.ref;
+						
+						
 					}
+					newNode.ref = right;
+					left.ref = newNode;
+					
 			}
 
 			public static void main(String[] args) {
