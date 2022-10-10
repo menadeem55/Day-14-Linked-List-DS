@@ -89,9 +89,6 @@ public class LinkedList {
 					temp.ref = null;
 				}
 			}
-				
-	
-	
 
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
