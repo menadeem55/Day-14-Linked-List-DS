@@ -23,6 +23,20 @@ public class LinkedList {
 		head = newNode;
 	}
 
+	public void addLast(Object data) {
+
+		Node newNode = new Node(data);
+		Node temp = head;
+		if (head == null)
+			head = newNode;
+		else {
+			while (temp.ref != null) {
+				temp = temp.ref;
+			}
+			temp.ref = newNode;
+		}
+	}
+
 	public void display() {
 		Node temp = head;
 		while (temp != null) {
@@ -39,11 +53,19 @@ public class LinkedList {
 		LinkedList list = new LinkedList();
 
 		System.out.println("Welcome to LinkedList Programming");
+		System.out.println("Add Nodes at First");
+		list.addFirst(70);
+		list.display();
 		list.addFirst(30);
 		list.display();
 		list.addFirst(56);
 		list.display();
-		list.addFirst(70);
+		System.out.println("add Nodes at Last");
+		list.addLast(56);
+		list.display();
+		list.addLast(30);
+		list.display();
+		list.addLast(70);
 		list.display();
 
 	}
