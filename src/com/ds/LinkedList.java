@@ -15,18 +15,36 @@ public class LinkedList {
 		}
 	}
 
-	public void elements(Object data) {
+	public void addFirst(Object data)
+
+	{
 		Node newNode = new Node(data);
-		System.out.println(newNode.data + " ");
+		newNode.ref = head;
+		head = newNode;
+	}
+
+	public void display() {
+		Node temp = head;
+		while (temp != null) {
+
+			if (temp.ref != null)
+				System.out.println(temp.data + " => ");
+			else
+				System.out.println(temp.data);
+			temp = temp.ref;
+		}
 	}
 
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
 
 		System.out.println("Welcome to LinkedList Programming");
-		list.elements(56);
-		list.elements(30);
-		list.elements(70);
+		list.addFirst(30);
+		list.display();
+		list.addFirst(56);
+		list.display();
+		list.addFirst(70);
+		list.display();
 
 	}
 
