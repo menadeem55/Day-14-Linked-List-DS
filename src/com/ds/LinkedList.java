@@ -45,24 +45,15 @@ public class LinkedList {
 		Node left = head;
 		Node right = left.ref;
 
-		/*
-		 * position first is used because the value of the index will be increased and
-		 * stop before the position at which user want to add the node
-		 */
 		while (index < (position - 1)) {
 
 			left = left.ref;
 			right = right.ref;
 			index++;
-
-			/*
-			 * if we do index < position is used because the value if index will be
-			 * incremented and will point to the index user has entered and the new element
-			 * will be added after the entered position
-			 */
-			newNode.ref = right;
-			left.ref = newNode;
+			
 		}
+		newNode.ref = right;
+		left.ref = newNode;
 	}
 
 	public void display() {
@@ -77,15 +68,34 @@ public class LinkedList {
 		}
 	}
 
-	public void deleteFirst() {
-		head = head.ref;
-	}
+			public void deleteFirst() 
+			{
+				head = head.ref;
+			}
+			
+			public void deleteLast() 
+			{
+				if(head == null)
+					System.out.println("Linked list is Empty");
+				else if(head.ref == null)
+					head = null;
+				else
+				{
+					Node temp = head;
+					while(temp.ref.ref != null)
+					{
+						temp = temp.ref;
+					}
+					temp.ref = null;
+				}
+			}
+				
+	
+	
 
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
-
 		System.out.println("Welcome to LinkedList Programming");
-
 		Scanner sc = new Scanner(System.in);
 
 		list.addFirst(56);
@@ -98,7 +108,7 @@ public class LinkedList {
 		list.addAtPosition(30, position);
 		list.display();
 
-		list.deleteFirst();
+		list.deleteLast();
 		list.display();
 		list.deleteFirst();
 		list.display();
