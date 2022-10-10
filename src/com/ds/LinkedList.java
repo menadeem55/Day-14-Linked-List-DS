@@ -136,35 +136,34 @@ public class LinkedList {
 					left.ref = newNode;
 					
 			}
+			public void deleteSpecificPosition(Object data)
+			{
+				int index = 0;
+				Node left = head;
+				Node right = left.ref;
+				while(right.data != data)
+				{
+						left = left.ref;
+						right = right.ref;
+						index++;
+					
+				}
+				left.ref = right.ref;
+			}
 
 			public static void main(String[] args) {
 				LinkedList list = new LinkedList();
 				System.out.println("Welcome to Linked List Problem");
-				Scanner sc = new Scanner(System.in);
-				System.out.println("Adding Nodes At First");
+				
+				
 				list.addFirst(56);
-				list.display();
+				list.addLast(30);
+				list.addLast(40);
 				list.addLast(70);
 				list.display();
+		
 				
-				
-				System.out.println("Enter Position Number To Add:- ");
-				int position =sc.nextInt();
-				list.addAtPosition(30, position);
+				list.deleteSpecificPosition(40);
 				list.display();
-				
-				
-				System.out.println();
-				System.out.println("enter Element Number To Search: ");
-				int input = sc.nextInt();
-				System.out.println(list.searhElement(input));
-				System.out.println("enter element after you want to add: ");
-				int element = sc.nextInt();
-				System.out.println("Enter Value to add: ");
-				int value = sc.nextInt();
-				list.insertElement(element,value);
-				list.display();
-				
-				
 			}
 		}
