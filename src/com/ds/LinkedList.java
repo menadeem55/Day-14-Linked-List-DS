@@ -45,24 +45,15 @@ public class LinkedList {
 		Node left = head;
 		Node right = left.ref;
 
-		/*
-		 * position first is used because the value of the index will be increased and
-		 * stop before the position at which user want to add the node
-		 */
 		while (index < (position - 1)) {
 
 			left = left.ref;
 			right = right.ref;
 			index++;
-
-			/*
-			 * if we do index < position is used because the value if index will be
-			 * incremented and will point to the index user has entered and the new element
-			 * will be added after the entered position
-			 */
+			
+		}
 			newNode.ref = right;
 			left.ref = newNode;
-		}
 	}
 
 	public void display() {
