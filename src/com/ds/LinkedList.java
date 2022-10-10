@@ -5,10 +5,11 @@ import java.util.*;
 public class LinkedList {
 
 	Node head;
-
-	class Node {
-
+	class Node 
+	
+	{
 		Object data;
+		Node next;
 		Node ref;
 
 		Node(Object data) {
@@ -89,6 +90,24 @@ public class LinkedList {
 					temp.ref = null;
 				}
 			}
+			
+			public Object searhElement(Object input)
+			{
+				
+			Node temp = head;
+			int index = 0;
+			while(temp != null)
+			{
+				index++;
+				if(temp.data == input)
+				{
+					String result = temp.data+" element found at index " +index;
+					return result;
+				}
+				temp = temp.next;
+			}
+			return null;
+		}
 
 	public static void main(String[] args) {
 		LinkedList list = new LinkedList();
@@ -109,6 +128,11 @@ public class LinkedList {
 		list.display();
 		list.deleteFirst();
 		list.display();
+		System.out.println();
+		System.out.println("Enter Element number to search:");
+		int input = sc.nextInt();
+		System.out.println(list.searhElement(input));
+				
 
 	}
 
