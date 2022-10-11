@@ -45,16 +45,8 @@ public class LinkedList {
 		Node left = head;
 		Node right = left.ref;
 
-		while (index < (position - 1)) {
-
-			left = left.ref;
-			right = right.ref;
-			index++;
-			
-		}
-		newNode.ref = right;
-		left.ref = newNode;
 	}
+	
 
 	public void display() {
 		Node temp = head;
