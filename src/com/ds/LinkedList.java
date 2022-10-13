@@ -5,8 +5,7 @@ import java.util.*;
 public class LinkedList {
 
 	Node head;
-	class Node 
-	
+	class Node 	
 	{
 		Object data;
 		Node ref;
