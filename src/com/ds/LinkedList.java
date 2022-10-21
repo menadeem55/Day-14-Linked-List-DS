@@ -45,7 +45,6 @@ public class LinkedList {
 		Node right = left.ref;
 
 	}
-	
 
 	public void display() {
 		Node temp = head;
